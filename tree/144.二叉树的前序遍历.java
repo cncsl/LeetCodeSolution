@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -18,21 +21,23 @@ import java.util.Stack;
  */
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        Stack<TreeNode> nodeStack = new Stack<>();
-    
-        TreeNode node = root;
-        while(node != null || !nodeStack.isEmpty()){
-            while(node != null){
-                result.add(node.val);
-                nodeStack.push(node);
-                node = node.left;
-            }
+        LinkedList<Integer> result = new LinkedList<>();
+        LinkedList<TreeNode> nodeStack = new LinkedList<>();
+        if(root == null)
+            return result;
 
-            node = nodeStack.pop();
-            node = node.right;
+        nodeStack.add(root);
+        TreeNode node = null;    
+        while(!nodeStack.isEmpty()){
+        node = nodeStack.pollLast();
+        result.addFirst(node.val);
+
+        if(node.left != null)
+            nodeStack.add(node.left);
+        if(node.right != null)
+            nodeStack.add(node.right);
         }
-
+        Collections.reverse(result);
         return result;
     }
 
