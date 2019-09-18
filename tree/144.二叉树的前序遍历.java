@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -11,43 +9,35 @@ import java.util.Stack;
  * [144] 二叉树的前序遍历
  */
 /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
+ * Definition for a binary tree node. public class TreeNode { int val; TreeNode
+ * left; TreeNode right; TreeNode(int x) { val = x; } }
  */
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         LinkedList<Integer> result = new LinkedList<>();
         LinkedList<TreeNode> nodeStack = new LinkedList<>();
-        if(root == null)
+        if (root == null)
             return result;
 
-        nodeStack.add(root);
-        TreeNode node = null;    
-        while(!nodeStack.isEmpty()){
-        node = nodeStack.pollLast();
-        result.addFirst(node.val);
-
-        if(node.left != null)
-            nodeStack.add(node.left);
-        if(node.right != null)
-            nodeStack.add(node.right);
+        TreeNode node = root;
+        while (node != null || !nodeStack.isEmpty()) {
+            while(node != null){
+                result.add(node.val);
+                nodeStack.push(node);
+                node = node.left;
+            }
+            node = nodeStack.pop();
+            node = node.right;
         }
-        Collections.reverse(result);
         return result;
     }
 
-    //递归调用
+    // 递归调用
     // private void helper(TreeNode root, List<Integer> list){
-    //     if(root != null){
-    //         list.add(root.val);
-    //         helper(root.left, list);
-    //         helper(root.right, list);
-    //     }
+    // if(root != null){
+    // list.add(root.val);
+    // helper(root.left, list);
+    // helper(root.right, list);
+    // }
     // }
 }
-
