@@ -20,7 +20,7 @@ class Solution {
         //叶子结点
         if(root.left == null && root.right == null && root.val == sum)
             return true;
-   
+        //遍历到叶子结点
         return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
     }
 }
