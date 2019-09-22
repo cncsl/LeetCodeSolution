@@ -37,15 +37,12 @@
  */
 class Solution {
     public String longestCommonPrefix(String[] strs) {
-
         if (strs.length == 0) {
             return "";
         }
-
         int index = 0;
 
         String firstElem = strs[0];
-
         for (int i = 0; i < firstElem.length(); i++) {
 
             char c = firstElem.charAt(index);
@@ -56,7 +53,6 @@ class Solution {
             }
             index++;
         }
-
         return strs[0].substring(0, index);
     }
 }
