@@ -27,17 +27,22 @@ class Solution {
             intervals[i] = intervals[min];
             intervals[min] = temp;
         }
-        // 执行合并
-        LinkedList<int[]> result = new LinkedList<>();
+        // 执行合并(LinkedList 有getLast 方法)
+        LinkedList<int[]> resultList = new LinkedList<>();
         for (int[] interval : intervals) {
-            if (result.isEmpty() || result.getLast()[1] < interval[0]) {
-                result.add(interval);
+            if (resultList.isEmpty() || resultList.getLast()[1] < interval[0]) {
+                resultList.add(interval);
             } else {
-                result.getLast()[1] = Math.max(result.getLast()[1], interval[1]);
+                resultList.getLast()[1] = Math.max(resultList.getLast()[1], interval[1]);
             }
         }
 
-        return result.toArray(new int[result.size()][2]);
+        //不用toArray方法因为太慢
+        int[][] resultArr = new int[resultList.size()][2];
+        for (int i = 0; i < resultList.size(); i++) {
+            resultArr[i] = resultList.get(i);
+        }
+        return resultArr;
     }
 }
 // @lc code=end
