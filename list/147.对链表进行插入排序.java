@@ -14,21 +14,21 @@ class Solution {
         if (head == null || head.next == null) {
             return head;
         }
-        //有可能在头节点前插入  所以用一个 virtHead
-        ListNode virtHead = new ListNode(0);
-        ListNode prev = virtHead;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode tmp = curr.next;
-            while (prev.next != null && prev.next.val < curr.val) {
+        ListNode vHead = new ListNode(-1);
+        ListNode index = head;
+        while(index != null){
+            //prev 每次从头部开始遍历找到插入位置（它是插入位置的前一个节点）
+            ListNode prev = vHead;
+            //temp 用于记录下一个索引值
+            ListNode temp = index.next;
+            while(prev.next != null && prev.next.val < index.val){
                 prev = prev.next;
             }
-            curr.next = prev.next;
-            prev.next = curr;
-            prev = virtHead;
-            curr = tmp;
+            index.next = prev.next;
+            prev.next = index;
+            index = temp;
         }
-        return virtHead.next;
+        return vHead.next;
     }
 }
 // @lc code=end

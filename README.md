@@ -6,4 +6,4 @@
 
 - 本地使用 vscode + leetcode 插件编写，形如 list 文件夹中的 ListNode.java 是为了通过 vscode 的语法检查
 
-- commit message 不知道写什么好，就写上了每次提交的日期
+- commit message 随便乱写
