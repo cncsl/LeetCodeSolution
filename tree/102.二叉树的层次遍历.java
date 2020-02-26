@@ -1,5 +1,3 @@
-import java.util.*;
-
 /*
  * @lc app=leetcode.cn id=102 lang=java
  *
