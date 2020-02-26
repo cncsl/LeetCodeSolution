@@ -1,8 +1,6 @@
 import java.awt.List;
 import java.util.Queue;
 
-import javax.swing.tree.TreeNode;
-
 /*
  * @lc app=leetcode.cn id=515 lang=java
  *
@@ -16,10 +14,10 @@ import javax.swing.tree.TreeNode;
  */
 class Solution {
     public List<Integer> largestValues(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
         List<Integer> maxs = new ArrayList();
+        if (root == null) {
+            return maxs;
+        }
 
         Queue<TreeNode> queue = new LinkedList();
         queue.offer(root);
