@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 /*
  * @lc app=leetcode.cn id=106 lang=java
  *

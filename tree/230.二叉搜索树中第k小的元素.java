@@ -1,4 +1,3 @@
-import java.util.Stack;
 /*
  * @lc app=leetcode.cn id=230 lang=java
  *
@@ -26,8 +25,8 @@ class Solution {
                 node = node.left;
             }
             node = stack.pop();
-            //保存结果、结束循环
-            if (--k == 0){
+            // 保存结果、结束循环
+            if (--k == 0) {
                 result = node.val;
                 break;
             }

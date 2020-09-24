@@ -1,6 +1,3 @@
-import java.awt.List;
-import java.util.Queue;
-
 /*
  * @lc app=leetcode.cn id=515 lang=java
  *

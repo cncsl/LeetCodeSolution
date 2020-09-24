@@ -1,6 +1,3 @@
-import java.util.LinkedList;
-import java.util.Queue;
-
 /*
  * @lc app=leetcode.cn id=111 lang=java
  *
@@ -27,9 +24,9 @@ class Solution {
                 node = nodeQueue.poll();
                 if (node.left == null && node.right == null)
                     break first;
-                if(node.left != null)
+                if (node.left != null)
                     nodeQueue.offer(node.left);
-                if(node.right != null)
+                if (node.right != null)
                     nodeQueue.offer(node.right);
             }
             result++;

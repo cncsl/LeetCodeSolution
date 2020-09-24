@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
-
 /*
  * @lc app=leetcode.cn id=144 lang=java
  *
@@ -21,7 +16,7 @@ class Solution {
 
         TreeNode node = root;
         while (node != null || !nodeStack.isEmpty()) {
-            while(node != null){
+            while (node != null) {
                 result.add(node.val);
                 nodeStack.push(node);
                 node = node.left;
