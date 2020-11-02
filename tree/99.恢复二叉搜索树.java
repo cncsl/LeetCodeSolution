@@ -3,6 +3,7 @@
  *
  * [99] 恢复二叉搜索树
  */
+
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode
  * left; TreeNode right; TreeNode(int x) { val = x; } }
@@ -30,7 +31,7 @@ class Solution {
 
             if (currNode.val <= prevVal) {
                 if (prevNode == null) {
-                    
+
                 }
             }
 

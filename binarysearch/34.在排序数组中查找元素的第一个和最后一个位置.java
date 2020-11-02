@@ -22,7 +22,7 @@ class Solution {
     }
 
     public int[] searchRange(int[] nums, int target) {
-        int[] result = { -1, -1 };
+        int[] result = {-1, -1};
 
         int left = extremeInsertionIndex(nums, target, true);
 

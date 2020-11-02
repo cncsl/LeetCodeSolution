@@ -6,7 +6,9 @@
 
 // @lc code=start
 class Solution {
-    /** 二分搜索的一般格式 */
+    /**
+     * 二分搜索的一般格式
+     */
     public int searchInsert(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;

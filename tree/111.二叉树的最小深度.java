@@ -3,6 +3,7 @@
  *
  * [111] 二叉树的最小深度
  */
+
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode
  * left; TreeNode right; TreeNode(int x) { val = x; } }
@@ -18,7 +19,8 @@ class Solution {
         nodeQueue.offer(root);
 
         TreeNode node = null;
-        first: while (!nodeQueue.isEmpty()) {
+        first:
+        while (!nodeQueue.isEmpty()) {
             int num = nodeQueue.size();
             for (int i = 0; i < num; i++) {
                 node = nodeQueue.poll();

@@ -5,6 +5,7 @@
  */
 
 // @lc code=start
+
 /**
  * Definition for singly-linked list. class ListNode { int val; ListNode next;
  * ListNode(int x) { val = x; next = null; } }
@@ -17,9 +18,9 @@ public class Solution {
         ListNode fast = head.next;
         ListNode slow = head;
         //如果 fast == slow 能成立，说明 fast 跑完一圈之后又追上了 slow
-        while(fast != slow){
+        while (fast != slow) {
             //快指针先到达尾部时说明不存在环
-            if(fast == null || fast.next == null){
+            if (fast == null || fast.next == null) {
                 return false;
             }
             fast = fast.next.next;

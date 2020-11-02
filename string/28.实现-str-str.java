@@ -12,7 +12,8 @@ class Solution {
 
         char n = needle.charAt(0);
         int max = haystack.length() - needle.length();
-        first: for (int i = 0; i <= max; i++) {
+        first:
+        for (int i = 0; i <= max; i++) {
             // 找到第一个字符
             if (n == haystack.charAt(i)) {
                 // 找到后检查剩下的部分

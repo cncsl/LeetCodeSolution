@@ -6,7 +6,7 @@
  */
 class Solution {
     public List<TreeNode> generateTrees(int n) {
-        if (n == 0) 
+        if (n == 0)
             // 空树也是树
             return new LinkedList<>();
         return generate(1, n);

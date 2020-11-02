@@ -13,12 +13,12 @@ class Solution {
         int maxLength = 1;
         int currentLength = 1;
         for (int i = 1; i < nums.length; i++) {
-            if(nums[i - 1] < nums[i]){
+            if (nums[i - 1] < nums[i]) {
                 currentLength++;
-                if(i == nums.length - 1){
+                if (i == nums.length - 1) {
                     maxLength = Math.max(maxLength, currentLength);
                 }
-            }else {
+            } else {
                 maxLength = Math.max(maxLength, currentLength);
                 currentLength = 1;
             }

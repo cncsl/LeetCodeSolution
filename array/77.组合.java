@@ -16,7 +16,7 @@ class Solution {
             temp.add(i);
         }
         temp.add(n + 1);
-        
+
         int j = 0;
         while (j < k) {
             ans.add(new ArrayList<Integer>(temp.subList(0, k)));

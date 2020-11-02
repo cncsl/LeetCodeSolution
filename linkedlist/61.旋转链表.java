@@ -3,6 +3,7 @@
  *
  * [61] 旋转链表
  */
+
 /**
  * Definition for singly-linked list. public class ListNode { int val; ListNode
  * next; ListNode(int x) { val = x; } }
@@ -20,10 +21,10 @@ class Solution {
             n++;
         }
         currNode.next = head;
-        
+
         // 找到拆分处
         ListNode prevNode = head;
-        for (int i = 0; i < n - k % n -1; i++)
+        for (int i = 0; i < n - k % n - 1; i++)
             prevNode = prevNode.next;
 
         // 拆分处右侧第一个结点是新的头结点

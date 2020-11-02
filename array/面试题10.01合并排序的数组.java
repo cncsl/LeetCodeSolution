@@ -11,7 +11,7 @@ class Solution {
                 A[point] = A[i--];
             } else if (A[i] > B[j]) {
                 A[point] = A[i--];
-            }else{
+            } else {
                 A[point] = B[j--];
             }
             point--;

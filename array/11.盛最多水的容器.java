@@ -16,7 +16,7 @@ class Solution {
                     : height[lowerIndex] * (indexTwo - indexOne);
             if (height[indexOne] < height[indexTwo]) {
                 indexOne++;
-            }else
+            } else
                 indexTwo--;
         }
         return maxarea;
