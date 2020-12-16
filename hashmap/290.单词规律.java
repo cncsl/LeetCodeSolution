@@ -20,7 +20,7 @@ class Solution {
         int sindex = 0;
         for (char ch : charArr) {
             String str = strArr[sindex++];
-            //如果存在字母到单词的映射，检查单词到字母的映射是否正确，下方相反
+            //如果存在字母到单词的映射，检查对应映射，下方相同
             if (cksv.containsKey(ch) && !str.equals(cksv.get(ch))) {
                 return false;
             }
