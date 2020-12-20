@@ -8,7 +8,8 @@
 class Solution {
     public int sumFourDivisors(int[] nums) {
         int result = 0;
-        loop : for (int num : nums) {
+        loop:
+        for (int num : nums) {
             //任意数的必定有因数是1和其自身
             int count = 2;
             int sum = 1 + num;

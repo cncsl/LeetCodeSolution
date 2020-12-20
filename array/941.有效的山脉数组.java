@@ -15,7 +15,7 @@ class Solution {
         while (point < A.length - 1 && A[point] < A[point + 1]) {
             point++;
         }
-        
+
         if (point == 0 || point == A.length - 1) {
             return false;
         }

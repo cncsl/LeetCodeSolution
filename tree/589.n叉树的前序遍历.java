@@ -25,7 +25,7 @@ class Node {
 */
 
 class Solution {
-    
+
     public List<Integer> preorder(Node root) {
         List<Integer> result = new ArrayList<>();
         recursive(root, result);
@@ -34,9 +34,9 @@ class Solution {
 
     //递归
     private void recursive(Node root, List<Integer> result) {
-        if(root != null) {
+        if (root != null) {
             result.add(root.val);
-            for(Node node : root.children) {
+            for (Node node : root.children) {
                 recursive(node, result);
             }
         }

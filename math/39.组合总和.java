@@ -23,14 +23,14 @@ class Solution {
     }
 
     private void fun(int[] candidates, int target, int sum, int begin) {
-        if(sum == target) {
+        if (sum == target) {
             result.add(new ArrayList<>(path));
             return;
         }
 
-        for(int i = begin; i < candidates.length; i++) {
+        for (int i = begin; i < candidates.length; i++) {
             int temp = sum + candidates[i];
-            if(temp <= target) {
+            if (temp <= target) {
                 path.add(candidates[i]);
                 fun(candidates, target, temp, i);
                 path.remove(path.size() - 1);

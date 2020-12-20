@@ -10,7 +10,7 @@ class Solution {
         //换低公式
         double result = Math.log10(n) / Math.log10(3);
         // result 为整数是 n 是 3 的幂
-        return (result - (int)result) == 0;
+        return (result - (int) result) == 0;
     }
 }
 // @lc code=end

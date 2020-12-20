@@ -10,7 +10,7 @@ class Solution {
         if (paths == null) {
             return "";
         }
-        
+
         Map<String, Integer> cityPath = new HashMap<>();
         paths.forEach(path -> {
             cityPath.put(path.get(0), cityPath.getOrDefault(path.get(0), 0) + 1);

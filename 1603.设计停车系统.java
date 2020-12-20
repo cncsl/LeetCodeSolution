@@ -15,10 +15,10 @@ class ParkingSystem {
         parkings[1] = medium;
         parkings[2] = small;
     }
-    
+
     public boolean addCar(int carType) {
-        if (parkings[carType - 1] > 0){
-            parkings[carType-1]--;
+        if (parkings[carType - 1] > 0) {
+            parkings[carType - 1]--;
             return true;
         } else {
             return false;
