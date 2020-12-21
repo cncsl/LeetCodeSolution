@@ -8,17 +8,18 @@
 class Solution {
     public int sumFourDivisors(int[] nums) {
         int result = 0;
-        loop : for (int num : nums) {
-            //任意数的必定有因数是1和其自身
-            int count = 2;
-            int sum = 1 + num;
-            for (int i = 2; i < num; i++) {
+        for (int num : nums) {
+            // count: 因数的个数
+            // sum: 因数的和
+            int count = 0, sum = 0;
+            for (int i = 1; i * i <= num; i++) {
                 if (num % i == 0) {
                     count++;
                     sum += i;
-                }
-                if (count > 4) {
-                    continue loop;
+                    if (i * i != num) {   // 判断 i 和 num/i 是否相等，若不相等才能将 num/i 看成新的因数
+                        count++;
+                        sum += num / i;
+                    }
                 }
             }
             if (count == 4) {
