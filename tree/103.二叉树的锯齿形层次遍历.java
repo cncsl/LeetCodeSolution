@@ -11,42 +11,36 @@
 class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
-        if (root == null)
+        if (root == null) {
             return result;
+        }
 
-        Stack<TreeNode> currLevel = new Stack<>();
-        Stack<TreeNode> nextLevel = new Stack<>();
-        currLevel.push(root);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        //left to right
+        boolean ltr = true;
+        while (!queue.isEmpty()) {
+            //双端队列，lft 为 true 时用 offerLast，反之用 offerFirst
+            Deque<Integer> level = new ArrayDeque<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                root = queue.poll();
+                if (ltr) {
+                    level.offerLast(root.val);
+                } else {
+                    level.offerFirst(root.val);
+                }
 
-        boolean ltr = true; // left to right
-        TreeNode node = null;
-        List<Integer> level = new ArrayList<>();
-        while (!currLevel.isEmpty()) {
-            node = currLevel.pop();
-            level.add(node.val);
-            if (ltr) {
-                if (node.left != null)
-                    nextLevel.push(node.left);
-                if (node.right != null)
-                    nextLevel.push(node.right);
-            } else {
-                if (node.right != null)
-                    nextLevel.push(node.right);
-                if (node.left != null)
-                    nextLevel.push(node.left);
+                if (root.left != null) {
+                    queue.offer(root.left);
+                }
+                if (root.right != null) {
+                    queue.offer(root.right);
+                }
             }
-            // 完成了一层遍历
-            if (currLevel.isEmpty()) {
-                // 将存储一层所有结果的 List 存入 result
-                result.add(level);
-                level = new ArrayList<>();
-                // 标志改变
-                ltr = !ltr;
-                // 交换两个栈的引用
-                Stack<TreeNode> temp = currLevel;
-                currLevel = nextLevel;
-                nextLevel = temp;
-            }
+
+            result.add(new LinkedList<Integer>(level));
+            ltr = !ltr;
         }
         return result;
     }
