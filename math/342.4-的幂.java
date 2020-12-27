@@ -8,7 +8,7 @@
 class Solution {
     public boolean isPowerOfFour(int n) {
         double result = Math.log10(n) / Math.log10(4);
-        return result - (int)result == 0;
+        return result - (int) result == 0;
     }
 }
 // @lc code=end
