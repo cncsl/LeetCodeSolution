@@ -7,7 +7,6 @@
 // @lc code=start
 class Solution {
     /**
-     *
      * @param g 孩子们
      * @param s 饼干
      * @return 能满足的孩子数量
@@ -17,7 +16,7 @@ class Solution {
         Arrays.sort(s);
 
         int result = 0;
-        for (int sIndex = 0, gIndex = 0; sIndex < s.length && gIndex < g.length;) {
+        for (int sIndex = 0, gIndex = 0; sIndex < s.length && gIndex < g.length; ) {
             if (g[gIndex] <= s[sIndex]) {
                 result++;
                 gIndex++;

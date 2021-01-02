@@ -8,7 +8,7 @@
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         PriorityQueue<int[]> pq = new PriorityQueue<>(
-            (pair1, pair2) -> pair1[0] != pair2[0] ? pair2[0] - pair1[0] : pair2[1] - pair1[1]);
+                (pair1, pair2) -> pair1[0] != pair2[0] ? pair2[0] - pair1[0] : pair2[1] - pair1[1]);
         for (int i = 0; i < k; ++i) {
             pq.offer(new int[]{nums[i], i});
         }

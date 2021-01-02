@@ -18,9 +18,9 @@ class Solution {
             // a == b 时两块石头都粉碎，PriorityQueue 特性保证了不会出现 a < b 的情况
             if (a > b) {
                 stonesQueue.offer(a - b);
-            } 
+            }
         }
-        return stonesQueue.size() == 0 ? 0 : stonesQueue.poll();        
+        return stonesQueue.size() == 0 ? 0 : stonesQueue.poll();
     }
 }
 // @lc code=end
