@@ -1,3 +1,7 @@
+/**
+ * https://leetcode-cn.com/problems/intersection-of-two-linked-lists-lcci/
+ *
+ */
 class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode p = headA;
