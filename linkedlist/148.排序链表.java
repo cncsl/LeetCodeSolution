@@ -5,20 +5,21 @@
  */
 
 // @lc code=start
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
 class Solution {
     /**
      * 对链表进行选择升序排序
-     * 
+     *
      * @param head 链表头节点
      */
     public ListNode sortList(ListNode head) {

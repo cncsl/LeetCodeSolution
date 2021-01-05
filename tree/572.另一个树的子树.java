@@ -5,19 +5,20 @@
  */
 
 // @lc code=start
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
  * }
  */
 class Solution {
@@ -29,7 +30,7 @@ class Solution {
         if (s == null || t == null) {
             return false;
         }
-        if(s.val == t.val) {
+        if (s.val == t.val) {
             return isSameTree(s, t) || isSubtree(s.left, t) || isSubtree(s.right, t);
         }
         // 根节点不同时不用考虑 s 和 t 是同一棵树的情况

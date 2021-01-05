@@ -1,6 +1,5 @@
 /**
  * https://leetcode-cn.com/problems/linked-list-cycle-lcci/
- *
  */
 class Solution {
     public ListNode detectCycle(ListNode head) {
