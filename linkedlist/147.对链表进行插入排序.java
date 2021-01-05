@@ -15,21 +15,23 @@ class Solution {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode vHead = new ListNode(-1);
-        ListNode index = head;
-        while (index != null) {
-            //prev 每次从头部开始遍历找到插入位置（它是插入位置的前一个节点）
-            ListNode prev = vHead;
-            //temp 用于记录下一个索引值
-            ListNode temp = index.next;
-            while (prev.next != null && prev.next.val < index.val) {
-                prev = prev.next;
+        ListNode dummyHead = new ListNode(Integer.MIN_VALUE, head);
+        ListNode lastSorted = head, curr = head.next;
+        while (curr != null) {
+            if (lastSorted.val <= curr.val) {
+                lastSorted = lastSorted.next;
+            } else {
+                ListNode prev = dummyHead;
+                while (prev.next.val <= curr.val) {
+                    prev = prev.next;
+                }
+                lastSorted.next = curr.next;
+                curr.next = prev.next;
+                prev.next = curr;
             }
-            index.next = prev.next;
-            prev.next = index;
-            index = temp;
+            curr = lastSorted.next;
         }
-        return vHead.next;
+        return dummyHead.next;
     }
 }
 // @lc code=end
