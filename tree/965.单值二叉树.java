@@ -5,13 +5,14 @@
  */
 
 // @lc code=start
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode(int x) { val = x; }
  * }
  */
 class Solution {
@@ -41,7 +42,7 @@ class Solution {
         }
         return true;
     }
-    
+
 }
 // @lc code=end
 

@@ -7,8 +7,8 @@
 // @lc code=start
 class Solution {
     /**
-        x = 2a * 3b * 5c
-        x / 2a / 3b / 5c = 1
+     * x = 2a * 3b * 5c
+     * x / 2a / 3b / 5c = 1
      */
     public boolean isUgly(int num) {
         if (num <= 0) {
