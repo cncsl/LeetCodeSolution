@@ -11,7 +11,7 @@ class Solution {
         while (index > 0 && s.charAt(index) == ' ') {
             index--;
         }
-        
+
         int length = 0;
         while (index >= 0) {
             if (s.charAt(index) == ' ') {

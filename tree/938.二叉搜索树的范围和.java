@@ -5,27 +5,28 @@
  */
 
 // @lc code=start
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
  * }
  */
 class Solution {
     /**
      * 计算二叉搜索树一个区间内所有节点值的和
-     * 
+     *
      * @param root 二叉搜索树根节点
-     * @param low 区间起始值
+     * @param low  区间起始值
      * @param high 区间结束值
      * @return low 和 high 区间内所有节点值的和
      */

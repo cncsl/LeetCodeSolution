@@ -50,7 +50,7 @@ class Solution {
         }
         return importance;
     }
-    
+
 }
 // @lc code=end
 
