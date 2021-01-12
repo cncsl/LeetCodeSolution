@@ -7,6 +7,9 @@
 // @lc code=start
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
+        if(nums.length == 0) {
+            return new int[0];
+        }
         PriorityQueue<int[]> pq = new PriorityQueue<>(
                 (pair1, pair2) -> pair1[0] != pair2[0] ? pair2[0] - pair1[0] : pair2[1] - pair1[1]);
         for (int i = 0; i < k; ++i) {
