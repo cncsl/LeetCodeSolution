@@ -1,6 +1,5 @@
 /**
  * https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/
- *
  */
 class Solution {
     public ListNode deleteNode(ListNode head, int val) {

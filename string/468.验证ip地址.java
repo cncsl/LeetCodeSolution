@@ -14,12 +14,20 @@ class Solution {
     public String validateIPv4(String ip) {
         String[] nums = ip.split("\\.", -1);
         for (String x : nums) {
-            if (x.length() == 0 || x.length() > 3) { return NEITHER; }
-            if (x.charAt(0) == '0' && x.length() != 1) { return NEITHER; }
-            for (char ch : x.toCharArray()) {
-                if (!Character.isDigit(ch)) { return NEITHER; }
+            if (x.length() == 0 || x.length() > 3) {
+                return NEITHER;
             }
-            if ("255".compareTo(x) < 0) { return NEITHER; }
+            if (x.charAt(0) == '0' && x.length() != 1) {
+                return NEITHER;
+            }
+            for (char ch : x.toCharArray()) {
+                if (!Character.isDigit(ch)) {
+                    return NEITHER;
+                }
+            }
+            if ("255".compareTo(x) < 0) {
+                return NEITHER;
+            }
         }
         return IPV4;
     }
@@ -28,9 +36,13 @@ class Solution {
         String[] nums = ip.split(":", -1);
         String hexdigits = "0123456789abcdefABCDEF";
         for (String x : nums) {
-            if (x.length() == 0 || x.length() > 4) { return NEITHER; }
+            if (x.length() == 0 || x.length() > 4) {
+                return NEITHER;
+            }
             for (Character ch : x.toCharArray()) {
-                if (hexdigits.indexOf(ch) == -1) { return NEITHER; }
+                if (hexdigits.indexOf(ch) == -1) {
+                    return NEITHER;
+                }
             }
         }
         return IPV6;
@@ -41,7 +53,9 @@ class Solution {
             return validateIPv4(IP);
         } else if (IP.chars().filter(ch -> ch == ':').count() == 7) {
             return validateIPv6(IP);
-        } else { return NEITHER; }
+        } else {
+            return NEITHER;
+        }
     }
 
 }
