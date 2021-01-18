@@ -1,6 +1,5 @@
 /**
  * https://leetcode-cn.com/problems/sparse-array-search-lcci/
- *
  */
 class Solution {
     public int findString(String[] words, String s) {

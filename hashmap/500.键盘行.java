@@ -9,7 +9,8 @@ class Solution {
     public String[] findWords(String[] words) {
         Map<Character, Integer> keyboard = createKeyboard();
         List<String> resultList = new ArrayList<>();
-        loop : for (String word : words) {
+        loop:
+        for (String word : words) {
             int lineNumber = keyboard.get(Character.toUpperCase(word.charAt(0)));
             for (int i = 1; i < word.length(); i++) {
                 if (lineNumber != keyboard.get(Character.toUpperCase(word.charAt(i)))) {
@@ -21,7 +22,7 @@ class Solution {
         return resultList.toArray(new String[0]);
     }
 
-    private Map<Character, Integer> createKeyboard(){
+    private Map<Character, Integer> createKeyboard() {
         Map<Character, Integer> keyboard = new HashMap<>();
         //第一行十个字母
         keyboard.put('Q', 1);

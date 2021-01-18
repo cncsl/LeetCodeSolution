@@ -1,8 +1,7 @@
 /**
  * https://leetcode-cn.com/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/
- *
  */
- class Solution {
+class Solution {
     public char firstUniqChar(String s) {
         //LinkedHashMap 是有序哈希表
         //Char Key Single Value，当重复时 value 为 false
