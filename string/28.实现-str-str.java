@@ -5,10 +5,12 @@
  */
 class Solution {
     public int strStr(String haystack, String needle) {
-        if (haystack == null || needle == null || needle.length() == 0)
+        if (haystack == null || needle == null || needle.length() == 0) {
             return 0;
-        if (haystack.length() == 0)
+        }
+        if (haystack.length() == 0) {
             return -1;
+        }
 
         char n = needle.charAt(0);
         int max = haystack.length() - needle.length();
@@ -18,8 +20,9 @@ class Solution {
             if (n == haystack.charAt(i)) {
                 // 找到后检查剩下的部分
                 for (int j = 1; j < needle.length(); j++) {
-                    if (haystack.charAt(i + j) != needle.charAt(j))
+                    if (haystack.charAt(i + j) != needle.charAt(j)) {
                         continue first;
+                    }
                 }
                 return i;
             }
