@@ -11,10 +11,12 @@ class Solution {
             return "";
         }
 
-        Map<String, Integer> cityPath = new HashMap<>();
+        Map<String, Integer> cityPath = new HashMap( (int) Math.max(16, paths.size() * 1.25));
         paths.forEach(path -> {
-            cityPath.put(path.get(0), cityPath.getOrDefault(path.get(0), 0) + 1);
-            cityPath.put(path.get(1), cityPath.getOrDefault(path.get(1), 0));
+            String startCityName = path.get(0);
+            String destCityName = path.get(1);
+            cityPath.put(startCityName, cityPath.getOrDefault(startCityName, 0) + 1);
+            cityPath.put(destCityName, cityPath.getOrDefault(destCityName, 0));
         });
 
         return cityPath.keySet().stream().filter(s -> cityPath.get(s) == 0).findFirst().orElse("");
