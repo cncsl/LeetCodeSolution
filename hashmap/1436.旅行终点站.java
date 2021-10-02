@@ -11,7 +11,7 @@ class Solution {
             return "";
         }
 
-        Map<String, Integer> cityPath = new HashMap( (int) Math.max(16, paths.size() * 1.25));
+        Map<String, Integer> cityPath = new HashMap(Math.max(16, (int) (paths.size() * 1.25) ));
         paths.forEach(path -> {
             String startCityName = path.get(0);
             String destCityName = path.get(1);
