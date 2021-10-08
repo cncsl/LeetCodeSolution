@@ -6,22 +6,37 @@
 
 // @lc code=start
 class Solution {
+
+    private static final int L = 10;
+
+    Map<Character, Integer> bin = new HashMap<Character, Integer>() {{
+        put('A', 0);
+        put('C', 1);
+        put('G', 2);
+        put('T', 3);
+    }};
+
     public List<String> findRepeatedDnaSequences(String s) {
-        //target length
-        int tLen = 10;
-        //先用 set 存结果保证唯一
-        Set<String> resultSet = new HashSet<>();
-        Set<String> subStrings = new HashSet<>();
-        for (int i = 0; i < s.length() - tLen + 1; i++) {
-            String temp = s.substring(i, i + tLen);
-            if (subStrings.contains(temp)) {
-                resultSet.add(temp);
-            } else {
-                subStrings.add(temp);
+        List<String> ans = new ArrayList<String>();
+        int n = s.length();
+        if (n <= L) {
+            return ans;
+        }
+        int x = 0;
+        for (int i = 0; i < L - 1; ++i) {
+            x = (x << 2) | bin.get(s.charAt(i));
+        }
+        Map<Integer, Integer> cnt = new HashMap<Integer, Integer>();
+        for (int i = 0; i <= n - L; ++i) {
+            x = ((x << 2) | bin.get(s.charAt(i + L - 1))) & ((1 << (L * 2)) - 1);
+            cnt.put(x, cnt.getOrDefault(x, 0) + 1);
+            if (cnt.get(x) == 2) {
+                ans.add(s.substring(i, i + L));
             }
         }
-        return new ArrayList<>(resultSet);
+        return ans;
     }
+
 }
 // @lc code=end
 
