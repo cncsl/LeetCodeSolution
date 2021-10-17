@@ -18,14 +18,14 @@ class Solution {
             return 0;
 
         int result = 0;
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         TreeNode node = root;
         while (node != null || !stack.isEmpty()) {
             while (node != null) {
-                stack.push(node);
+                stack.addFirst(node);
                 node = node.left;
             }
-            node = stack.pop();
+            node = stack.removeFirst();
             // 保存结果、结束循环
             if (--k == 0) {
                 result = node.val;
