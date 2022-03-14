@@ -6,9 +6,10 @@
 
 // @lc code=start
 class Solution {
-    public String reverseOnlyLetters(String S) {
-        StringBuilder sb = new StringBuilder();
-        char[] charArr = S.toCharArray();
+    public String reverseOnlyLetters(String s) {
+        char[] charArr = s.toCharArray();
+        StringBuilder resultBuilder = new StringBuilder();
+
         int left = 0;
         int right = charArr.length - 1;
         while (left < charArr.length) {
@@ -17,13 +18,14 @@ class Solution {
                 while (!Character.isLetter(charArr[right])) {
                     right--;
                 }
-                sb.append(charArr[right--]);
+                resultBuilder.append(charArr[right--]);
             } else {
-                sb.append(charArr[left]);
+                resultBuilder.append(charArr[left]);
             }
             left++;
         }
-        return sb.toString();
+
+        return resultBuilder.toString();
     }
 }
 // @lc code=end
