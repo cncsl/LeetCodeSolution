@@ -27,19 +27,27 @@ class Node {
 class Solution {
 
     public List<Integer> preorder(Node root) {
+        if (root == null) {
+            return Collections.emptyList();
+        }
+        
         List<Integer> result = new ArrayList<>();
-        recursive(root, result);
-        return result;
-    }
-
-    //递归
-    private void recursive(Node root, List<Integer> result) {
-        if (root != null) {
+        //先进后出
+        Deque<Node> stack = new ArrayDeque<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            root = stack.pop();
             result.add(root.val);
-            for (Node node : root.children) {
-                recursive(node, result);
+            //倒序把当前层子节点入栈
+            List<Node> children = root.children;
+            if (children != null && !children.isEmpty()) {
+                for (int i = children.size() - 1; i >= 0; i--) {
+                    stack.push(children.get(i));
+                }
             }
         }
+
+        return result;
     }
 
 }
